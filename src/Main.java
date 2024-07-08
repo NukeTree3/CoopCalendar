@@ -24,14 +24,19 @@ public class Main {
         //Day day1 = month.GetDays()[12];
         //day1.SetComments("ЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕ");
 
-        for (Month moth :year1.GetMonths()){
-            System.out.println(moth.GetNameOfMonth());
-            for (Day day : moth.GetDays()){
-                System.out.println(day.GetDayOfWeek());
-                System.out.println(day.GetNumberOfDay());
-                System.out.println(day.GetComments());
-            }
-            System.out.println();
-        }
+//        for (Month moth :year1.GetMonths()){
+//            System.out.println(moth.GetNameOfMonth());
+//            for (Day day : moth.GetDays()){
+//                System.out.println(day.GetDayOfWeek());
+//                System.out.println(day.GetNumberOfDay());
+//                System.out.println(day.GetComments());
+//            }
+//            System.out.println();
+//        }
+        CommentsEditor commentsEditor = new CommentsEditor();
+        commentsEditor.addComments(9,7,year1,"ЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕ");
+
+        Table table = new Table();
+        table.CreateTable(year1);
     }
 }

@@ -23,4 +23,7 @@ public class Month {
     public Day[] GetDays(){
         return days;
     }
+    public Day getDay(int numberOfDay){
+        return days[numberOfDay];
+    }
 }

@@ -14,4 +14,7 @@ public class Year {
     public Month[] GetMonths(){
         return months;
     }
+    public Month getMonth(int numderOfMonth){
+        return months[numderOfMonth];
+    }
 }
