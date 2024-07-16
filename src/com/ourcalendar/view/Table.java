@@ -1,11 +1,14 @@
-import java.time.LocalDate;
-import java.util.Date;
-import java.util.Locale;
+package com.ourcalendar.view;
+
+import com.ourcalendar.model.date.Day;
+import com.ourcalendar.model.date.Month;
+import com.ourcalendar.model.date.Year;
+
 import java.time.DayOfWeek;
 
 public class Table {
-//    private CreateYear year = new CreateYear();
-//    private Year year1 = year.CreateYear(2024);
+//    private com.ourcalendar.model.date.CreateYear year = new com.ourcalendar.model.date.CreateYear();
+//    private com.ourcalendar.model.date.Year year1 = year.com.ourcalendar.model.date.CreateYear(2024);
 
     public void CreateTable(Year year1){
         for (Month moth :year1.GetMonths()){

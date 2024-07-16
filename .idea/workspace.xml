@@ -4,16 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe5cfa1b-9ce8-49ec-a054-1b8b361d0367" name="Changes" comment="Создание основных классов и их не полная реализация">
-      <change afterPath="$PROJECT_DIR$/src/CommentsEditor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserComments.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="fe5cfa1b-9ce8-49ec-a054-1b8b361d0367" name="Changes" comment="Основные классы model + класс Tabel как View">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/client/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/FIleHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/Writeble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/server/server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/service/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/UserComments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/presenter/Presenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommentsEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/CommentsEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CreateYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/CreateYear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Day.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DayOfWeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/DayOfWeek.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Month.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Month.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Year.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Month.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Month.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserComments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Year.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +34,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -54,14 +65,76 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.BaseClient.executor": "Run",
+    "Application.BaseServer.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.MainMain.executor": "Run",
+    "Application.MainTest5.executor": "Run",
+    "Application.MainTest6.executor": "Run",
+    "Application.Test4.executor": "Run",
+    "Application.lastTest.executor": "Run",
+    "Application.test.executor": "Run",
+    "Application.test2.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/andre/IdeaProjects/DiplomaProject",
     "onboarding.tips.debug.path": "C:/Users/andre/IdeaProjects/DiplomaProject/src/Main.java"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.BaseServer">
+    <configuration name="BaseClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BaseClient" />
+      <module name="DiplomaProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BaseServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BaseServer" />
+      <module name="DiplomaProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainTest5" />
+      <module name="DiplomaProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainTest6" />
+      <module name="DiplomaProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lastTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lastTest" />
+      <module name="DiplomaProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BaseServer" />
+        <item itemvalue="Application.BaseClient" />
+        <item itemvalue="Application.lastTest" />
+        <item itemvalue="Application.MainTest6" />
+        <item itemvalue="Application.MainTest5" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -79,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717954143624</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Основные классы model + класс Tabel как View">
+      <option name="closed" value="true" />
+      <created>1720479547479</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720479547480</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -95,6 +176,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Создание основных классов и их не полная реализация" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создание основных классов и их не полная реализация" />
+    <MESSAGE value="Основные классы model + класс Tabel как View" />
+    <option name="LAST_COMMIT_MESSAGE" value="Основные классы model + класс Tabel как View" />
   </component>
 </project>

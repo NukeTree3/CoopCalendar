@@ -1,3 +1,5 @@
+package com.ourcalendar.model.date;
+
 public class Day {
 
 
