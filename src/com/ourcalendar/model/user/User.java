@@ -1,3 +1,7 @@
+package com.ourcalendar.model.user;
+
+import com.ourcalendar.model.AcceptedData;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,16 +13,19 @@ import java.util.Scanner;
 
 public class User {
 
-    private static ServerSocket serverSocket;
-    private static BufferedReader readerClient;
-    private static Socket socket1;
-    private static OutputStreamWriter writer;
-    private static Socket socket2;
-    private static ArrayList<String> connectsList = new ArrayList<>();
+    private int myPort;
+    private ServerSocket serverSocket;
+    private BufferedReader readerClient;
+    private Socket socket1;
+    private OutputStreamWriter writer;
+    private Socket socket2;
+    private ArrayList<String> connectsList = new ArrayList<>();
 
-    public static void main(String[] args) throws IOException {
-        connectsList.add("127.0.0.1:8001");
-        connectsList.add("127.0.0.1:8002");
+    public User(int port){
+        this.myPort = port;
+    }
+
+    public void start() throws IOException {
 
         Thread serverThread = new Thread(() -> {
             try {
@@ -29,16 +36,16 @@ public class User {
         });
 
         Thread clientThread = new Thread(() -> {
-            try {
-                messaging();
-                //TimeUnit.SECONDS.sleep(10);
-                //client(sendMessage());
-                stop();
-            } catch (IOException e) {
-                //throw new RuntimeException(e);
-            } catch (InterruptedException e) {
-                //throw new RuntimeException(e);
-            }
+//            try {
+//                //messaging();
+//                //TimeUnit.SECONDS.sleep(10);
+//                //client(sendMessage());
+//                stop();
+//            } catch (IOException e) {
+//                //throw new RuntimeException(e);
+//            } catch (InterruptedException e) {
+//                //throw new RuntimeException(e);
+//            }
 
 //            try {
 //                client();
@@ -62,9 +69,9 @@ public class User {
         //stop();
     }
 
-    public static void server() throws IOException {
+    public void server() throws IOException {
         System.out.println("01?");
-        serverSocket = new ServerSocket(8000);
+        serverSocket = new ServerSocket(myPort);
         System.out.println("02?");
         while (true){
             System.out.println("03?");
@@ -74,9 +81,11 @@ public class User {
             System.out.println("06?");
 
 
-            String auntifaction = readerClient.readLine();
+            String data = readerClient.readLine();
+            AcceptedData acceptedData = new AcceptedData();
+            acceptedData.setData(data);
             System.out.println("07?");
-            System.out.println(auntifaction);
+            System.out.println(data);
             System.out.println("08?");
             readerClient.close();
             socket1.close();
@@ -85,7 +94,7 @@ public class User {
 
     }
 
-    public static void client(String message) throws IOException, InterruptedException {
+    public void client(String message) throws IOException, InterruptedException {
         System.out.println("1?");
         for (String con: connectsList){
             String[] strings = con.split(":");
@@ -95,51 +104,24 @@ public class User {
             System.out.println("3?");
 
             System.out.println("4?");
-            writer.write("от "+8000+" к "+8001 + " сообщение:"+message);
+            writer.write("от "+ myPort +" к "+8001 + " сообщение:"+message);
             writer.flush();
             writer.close();
         }
+        //stopServer();
     }
 
-    public static void stop() throws IOException {
-        System.out.println("12345");
-        //socket2.close();
-    }
 
-    public static void stopServer() throws InterruptedException, IOException {
+    public void stopServer() throws InterruptedException, IOException {
         serverSocket.close();
     }
 
-    public static String sendMessage(){
-        System.out.println("Введите сообщение: ");
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
-        return s;
+    public void addUser(String adres, int port){
+        String builder = adres + ":" + port;
+        connectsList.add(builder);
     }
 
-    public static void messaging() throws IOException, InterruptedException {
-        while (true){
-            String s = sendMessage();
-            System.out.println(s);
-            switch (s){
-                case ("/stop"):stop(); stopServer();break;
-                case ("/add"):addUser();break;
-                default: client(s);
-            }
-        }
-
-    }
-
-    public static void addUser(){
-        StringBuilder builder = new StringBuilder();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите адресс");
-        String adres = scanner.nextLine();
-        System.out.println("Введите порт");
-        String port = scanner.nextLine();
-        builder.append(adres);
-        builder.append(":");
-        builder.append(port);
-        connectsList.add(builder.toString());
+    public ArrayList<String> getConnectionList(){
+        return connectsList;
     }
 }

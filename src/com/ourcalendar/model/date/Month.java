@@ -2,6 +2,7 @@ package com.ourcalendar.model.date;
 
 public class Month {
     private String nameOfMonth;
+    private int numberOfMonth;
     private int lenthOfMonth = 31;
 
     public void SetLenthOfMonth(int len){
@@ -15,6 +16,12 @@ public class Month {
 
     public void SetNameOfMonth(String name){
         this.nameOfMonth = name;
+    }
+    public void setNumberOfMonth(int numberOfMonth){
+        this.numberOfMonth = numberOfMonth;
+    }
+    public int getMonth(){
+        return numberOfMonth;
     }
     public String GetNameOfMonth(){
         return nameOfMonth;

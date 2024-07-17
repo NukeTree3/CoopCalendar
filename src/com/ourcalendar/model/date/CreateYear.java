@@ -11,6 +11,7 @@ public class CreateYear {
             day = LocalDate.of(year,i,1);
             Month month = new Month();
             month.SetNameOfMonth(day.getMonth().toString());
+            month.setNumberOfMonth(month.getMonth());
             month.SetLenthOfMonth(day.lengthOfMonth());
             Day[] days = new Day[day.lengthOfMonth()];
             for (int j = 1; j<=day.lengthOfMonth();j++){

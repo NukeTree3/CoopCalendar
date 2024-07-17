@@ -1,18 +1,19 @@
 import com.ourcalendar.model.date.CreateYear;
 import com.ourcalendar.model.date.Year;
 import com.ourcalendar.model.user.CommentsEditor;
+import com.ourcalendar.model.user.User;
+import com.ourcalendar.presenter.Presenter;
 import com.ourcalendar.view.Table;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.time.LocalDate;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws UnknownHostException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         /*
         таски на ближайшее время:
-        1)доделать связь р2р
+        1)доделать связь р2р+
         2)сделать так, чтоб каждый изменял свой календарь и это отображалось у каждого
         3)протестировать на растоянии
 
@@ -20,45 +21,96 @@ public class Main {
         пробуждать каждого пользователя через определенное время и синхронизироваться с остальными
          */
 
-        InetAddress ip;
-        String hostname;
-        ip = InetAddress.getLocalHost();
-        hostname = ip.getHostName();
-        System.out.println(ip);
-        System.out.println(hostname);
-
-        LocalDate date = LocalDate.now();
-        System.out.println(date.getDayOfMonth());
-        System.out.println(date.getMonth());
-        System.out.println(date.getDayOfWeek());
-        System.out.println(date.lengthOfMonth());
+//        InetAddress ip;
+//        String hostname;
+//        ip = InetAddress.getLocalHost();
+//        hostname = ip.getHostName();
+//        System.out.println(ip);
+//        System.out.println(hostname);
+//
+//        LocalDate date = LocalDate.now();
+//        System.out.println(date.getDayOfMonth());
+//        System.out.println(date.getMonth());
+//        System.out.println(date.getDayOfWeek());
+//        System.out.println(date.lengthOfMonth());
 
         CreateYear year = new CreateYear();
         Year year1 = year.CreateYear(2024);
 
-
-
-        //com.ourcalendar.model.date.Month month = year1.GetMonths()[10];
-        //com.ourcalendar.model.date.Day day1 = month.GetDays()[12];
-        //day1.SetComments("ЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕ");
-
-//        for (com.ourcalendar.model.date.Month moth :year1.GetMonths()){
-//            System.out.println(moth.GetNameOfMonth());
-//            for (com.ourcalendar.model.date.Day day : moth.GetDays()){
-//                System.out.println(day.GetDayOfWeek());
-//                System.out.println(day.GetNumberOfDay());
-//                System.out.println(day.GetComments());
-//            }
-//            System.out.println();
-//        }
-
-
+        Presenter presenter = new Presenter();
 
         CommentsEditor commentsEditor = new CommentsEditor();
-        commentsEditor.addComments(9,7,year1,"ЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕ");
+        presenter.addComment(9,7,year1,"ЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕ");
+        //commentsEditor.addComments(9,7,year1,"ЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕ");
 
         Table table = new Table();
-        table.CreateTable(year1);
+        User user = new User(8000);
+        User user1 = new User(8001);
+        user1.start();
+
+        Scanner scanner = new Scanner(System.in);
+        while (true){
+            System.out.println("1-добавление сообщения к дате, 2-добавление нового пользователя, 3-отправление изменений, 4-вывод календаря, 5-вывод списка всех контактов, 6-вывод списка изменений");
+            switch (scanner.nextLine()){
+                case("1"):{
+                    System.out.println("Введите номер дня");
+                    String day = scanner.nextLine();
+                    System.out.println("Введите номер месяца");
+                    String month = scanner.nextLine();
+                    System.out.println("Введите сообщение");
+                    String message = scanner.nextLine();
+                    presenter.addComment(Integer.parseInt(day), Integer.parseInt(month),year1,message);
+                    break;
+                }
+
+                case("2"):{
+                    System.out.println("Введите адрес");
+                    String address = scanner.nextLine();
+                    System.out.println("Введите порт");
+                    String port = scanner.nextLine();
+                    user.addUser(address, Integer.parseInt(port));
+                    break;
+                }
+
+                case("3"):{
+                    System.out.println("Отправка...");
+                    user.start();
+                    StringBuilder stringBuilder= new StringBuilder();
+                    for(String comments : presenter.getUserChanges()){
+                        stringBuilder.append(comments);
+                        stringBuilder.append("#@@#");
+                    }
+                    user.client(stringBuilder.toString());
+                    break;
+                }
+
+                case("4"):{
+                    System.out.println("Вот");
+                    table.CreateTable(year1);
+                    break;
+                }
+
+                case("6"):{
+                    System.out.println("Вот");
+                    System.out.println(presenter.getUserChanges().toString());
+                    break;
+                }
+
+                case("5"):{
+                    System.out.println("Вот");
+                    for (String connecton: user.getConnectionList()) {
+                        System.out.println(connecton);
+                    }
+
+                    break;
+                }
+
+
+                default:{
+                    System.out.println("Ошибка ввода");
+                }
+            }
+        }
 
 
     }

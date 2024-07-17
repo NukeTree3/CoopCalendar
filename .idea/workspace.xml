@@ -4,26 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe5cfa1b-9ce8-49ec-a054-1b8b361d0367" name="Changes" comment="Основные классы model + класс Tabel как View">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/client/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/FIleHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/Writeble.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/server/server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/service/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/UserComments.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/presenter/Presenter.java" afterDir="false" />
+    <list default="true" id="fe5cfa1b-9ce8-49ec-a054-1b8b361d0367" name="Changes" comment="Добавление одноранговой сети и разного">
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/AcceptedData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/DayAccepted.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/UserChanges.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommentsEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/CommentsEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CreateYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/CreateYear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DayOfWeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/DayOfWeek.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Month.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Month.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserComments.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Year.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/client/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/CreateYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/CreateYear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Month.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Month.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/server/server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/UserComments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/UserComments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/presenter/Presenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/presenter/Presenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/Table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,9 +77,9 @@
     "onboarding.tips.debug.path": "C:/Users/andre/IdeaProjects/DiplomaProject/src/Main.java"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.BaseServer">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="BaseClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BaseClient" />
+      <option name="MAIN_CLASS_NAME" value="tests.BaseClient" />
       <module name="DiplomaProject" />
       <extension name="coverage">
         <pattern>
@@ -98,28 +92,28 @@
       </method>
     </configuration>
     <configuration name="BaseServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BaseServer" />
+      <option name="MAIN_CLASS_NAME" value="tests.BaseServer" />
       <module name="DiplomaProject" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainTest5" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="DiplomaProject" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="MainTest6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainTest6" />
+      <option name="MAIN_CLASS_NAME" value="tests.MainTest6" />
       <module name="DiplomaProject" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="lastTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lastTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.lastTest" />
       <module name="DiplomaProject" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.BaseServer" />
         <item itemvalue="Application.BaseClient" />
         <item itemvalue="Application.lastTest" />
         <item itemvalue="Application.MainTest6" />
-        <item itemvalue="Application.MainTest5" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720479547480</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Добавление одноранговой сети и разного">
+      <option name="closed" value="true" />
+      <created>1721168175355</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1721168175355</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +179,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Создание основных классов и их не полная реализация" />
     <MESSAGE value="Основные классы model + класс Tabel как View" />
-    <option name="LAST_COMMIT_MESSAGE" value="Основные классы model + класс Tabel как View" />
+    <MESSAGE value="Добавление одноранговой сети и разного" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление одноранговой сети и разного" />
   </component>
 </project>

@@ -32,6 +32,9 @@ public class Table {
                 System.out.print(day.GetNumberOfDay());
                 System.out.print("/");
                 System.out.print(day.GetComments());
+                if (year1.GetYear() == && moth.getMonth() == && day.GetNumberOfDay() == ){
+
+                }
                 if (count>=7){
                     System.out.println();
                     count = 0;
