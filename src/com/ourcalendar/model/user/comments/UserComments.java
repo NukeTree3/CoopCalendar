@@ -1,4 +1,4 @@
-package com.ourcalendar.model.user;
+package com.ourcalendar.model.user.comments;
 
 import com.ourcalendar.model.date.Day;
 

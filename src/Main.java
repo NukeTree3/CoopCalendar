@@ -1,7 +1,7 @@
 import com.ourcalendar.model.date.CreateYear;
 import com.ourcalendar.model.date.Year;
-import com.ourcalendar.model.user.CommentsEditor;
-import com.ourcalendar.model.user.User;
+import com.ourcalendar.model.service.Service;
+import com.ourcalendar.model.user.comments.CommentsEditor;
 import com.ourcalendar.presenter.Presenter;
 import com.ourcalendar.view.Table;
 
@@ -9,12 +9,12 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
 
         /*
         таски на ближайшее время:
         1)доделать связь р2р+
-        2)сделать так, чтоб каждый изменял свой календарь и это отображалось у каждого
+        2)сделать так, чтоб каждый изменял свой календарь и это отображалось у каждого +
         3)протестировать на растоянии
 
         основная идея синхронизации конечного приложения: синхронизация пользователей к определенному времени,
@@ -35,7 +35,10 @@ public class Main {
 //        System.out.println(date.lengthOfMonth());
 
         CreateYear year = new CreateYear();
-        Year year1 = year.CreateYear(2024);
+        Service service = new Service();
+        Service service1 = new Service();
+        Year year1 = year.createYear(2024);
+
 
         Presenter presenter = new Presenter();
 
@@ -44,9 +47,16 @@ public class Main {
         //commentsEditor.addComments(9,7,year1,"ЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕ");
 
         Table table = new Table();
-        User user = new User(8000);
-        User user1 = new User(8001);
-        user1.start();
+        service.createUser(8000);
+        service1.createUser(8001);
+        service.startUser();
+        service1.startUser();
+        service1.addUsers("127.0.0.1",8000);
+        //User user = new User(8000);
+        //User user1 = new User(8001);
+        //user1.start();
+        //user.start();
+        //user1.addUser("127.0.0.1",8000);
 
         Scanner scanner = new Scanner(System.in);
         while (true){
@@ -68,25 +78,38 @@ public class Main {
                     String address = scanner.nextLine();
                     System.out.println("Введите порт");
                     String port = scanner.nextLine();
-                    user.addUser(address, Integer.parseInt(port));
+                    service.addUsers(address,Integer.parseInt(port));
                     break;
                 }
 
                 case("3"):{
                     System.out.println("Отправка...");
-                    user.start();
+                    //user.start();
                     StringBuilder stringBuilder= new StringBuilder();
                     for(String comments : presenter.getUserChanges()){
                         stringBuilder.append(comments);
                         stringBuilder.append("#@@#");
                     }
-                    user.client(stringBuilder.toString());
+                    System.out.println(stringBuilder.toString());
+                    service.clientUser(stringBuilder.toString());
+                    //user.client(stringBuilder.toString());
                     break;
                 }
 
                 case("4"):{
                     System.out.println("Вот");
-                    table.CreateTable(year1);
+                    service.outputTable(year1);
+                    //table.CreateTable(year1);
+                    break;
+                }
+
+                case("5"):{
+                    System.out.println("Вот");
+                    //for (String connecton: user.getConnectionList()) {
+                    for (String connecton: service.getConnectionList()) {
+                        System.out.println(connecton);
+                    }
+
                     break;
                 }
 
@@ -96,12 +119,9 @@ public class Main {
                     break;
                 }
 
-                case("5"):{
+                case("7"):{
                     System.out.println("Вот");
-                    for (String connecton: user.getConnectionList()) {
-                        System.out.println(connecton);
-                    }
-
+                    service1.clientUser("12##!!##10##!!##0##!!##))))))))))))");
                     break;
                 }
 
@@ -111,7 +131,5 @@ public class Main {
                 }
             }
         }
-
-
     }
 }

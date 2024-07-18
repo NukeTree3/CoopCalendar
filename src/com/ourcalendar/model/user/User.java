@@ -1,6 +1,6 @@
 package com.ourcalendar.model.user;
 
-import com.ourcalendar.model.AcceptedData;
+import com.ourcalendar.model.user.accepteddata.AcceptedData;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,6 @@ import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class User {
 
@@ -20,9 +19,11 @@ public class User {
     private OutputStreamWriter writer;
     private Socket socket2;
     private ArrayList<String> connectsList = new ArrayList<>();
+    AcceptedData acceptedData;
 
-    public User(int port){
+    public User(int port, AcceptedData acceptedData){
         this.myPort = port;
+        this.acceptedData = acceptedData;
     }
 
     public void start() throws IOException {
@@ -82,7 +83,7 @@ public class User {
 
 
             String data = readerClient.readLine();
-            AcceptedData acceptedData = new AcceptedData();
+            //AcceptedData acceptedData = new AcceptedData();
             acceptedData.setData(data);
             System.out.println("07?");
             System.out.println(data);
@@ -104,7 +105,7 @@ public class User {
             System.out.println("3?");
 
             System.out.println("4?");
-            writer.write("от "+ myPort +" к "+8001 + " сообщение:"+message);
+            writer.write(message);
             writer.flush();
             writer.close();
         }

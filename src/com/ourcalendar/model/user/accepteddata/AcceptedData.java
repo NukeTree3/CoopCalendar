@@ -1,4 +1,4 @@
-package com.ourcalendar.model;
+package com.ourcalendar.model.user.accepteddata;
 
 import java.util.ArrayList;
 

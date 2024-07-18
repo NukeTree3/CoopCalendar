@@ -3,15 +3,24 @@ package com.ourcalendar.model.date;
 import java.time.LocalDate;
 
 public class CreateYear {
-    public Year CreateYear(int year){
+    TimeLine timeLine = new TimeLine();
+
+    public void createTimeLine(){
+        for(int i = 2020; i<2050; i++){
+            timeLine.addYear(createYear(i));
+        }
+    }
+
+    public Year createYear(int year){
         Year creatyear = new Year();
+        creatyear.SetYear(year);
         LocalDate day;
         Month[] months = new Month[12];
         for (int i = 1; i<=12; i++){
             day = LocalDate.of(year,i,1);
             Month month = new Month();
             month.SetNameOfMonth(day.getMonth().toString());
-            month.setNumberOfMonth(month.getMonth());
+            month.setNumberOfMonth(i);
             month.SetLenthOfMonth(day.lengthOfMonth());
             Day[] days = new Day[day.lengthOfMonth()];
             for (int j = 1; j<=day.lengthOfMonth();j++){
