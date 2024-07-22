@@ -14,6 +14,7 @@ public class UserComments {
         stringBuilder.append(year);
         stringBuilder.append("##!!##");
         stringBuilder.append(day.GetComments());
+
         return stringBuilder.toString();
     }
 }

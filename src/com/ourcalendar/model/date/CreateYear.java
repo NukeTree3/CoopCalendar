@@ -3,9 +3,9 @@ package com.ourcalendar.model.date;
 import java.time.LocalDate;
 
 public class CreateYear {
-    TimeLine timeLine = new TimeLine();
+    //TimeLine timeLine = new TimeLine();
 
-    public void createTimeLine(){
+    public void createTimeLine(TimeLine timeLine){
         for(int i = 2020; i<2050; i++){
             timeLine.addYear(createYear(i));
         }

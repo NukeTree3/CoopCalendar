@@ -4,23 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe5cfa1b-9ce8-49ec-a054-1b8b361d0367" name="Changes" comment="обработка полученных сообщений">
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/TimeLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/View.java" afterDir="false" />
+    <list default="true" id="fe5cfa1b-9ce8-49ec-a054-1b8b361d0367" name="Changes" comment="переделывание под шаблон MVP">
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/ContactList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandDeleteContact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandFinish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandStartServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandStopServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/savesAcceptedData.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/savesContactList.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/savesTimeLine.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/AcceptedData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/accepteddata/AcceptedData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/DayAccepted.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/accepteddata/DayAccepted.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/CreateYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/CreateYear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Day.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Month.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Month.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/TimeLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/TimeLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Year.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/FIleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/FIleHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/Writeble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/Writeble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/service/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/CommentsEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/comments/CommentsEditor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/UserChanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/comments/UserChanges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/UserComments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/comments/UserComments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/accepteddata/AcceptedData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/accepteddata/AcceptedData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/comments/UserComments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/comments/UserComments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/presenter/Presenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/presenter/Presenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/ConsoleUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/ConsoleUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAddComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAddComment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAddUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAddUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandClientUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandClientUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandCreateUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandCreateYear.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandDownload.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandGetConnectionList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandGetConnectionList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandGetUserChanges.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandOutputTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandOutputTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandSaved.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandStartUser.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,26 +82,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BaseClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.BaseServer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainTest5.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainTest6.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test4.executor&quot;: &quot;Run&quot;,
-    &quot;Application.lastTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.test2.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/DiplomaProject&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/andre/IdeaProjects/DiplomaProject/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BaseClient.executor": "Run",
+    "Application.BaseServer.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MainMain.executor": "Run",
+    "Application.MainTest.executor": "Run",
+    "Application.MainTest5.executor": "Run",
+    "Application.MainTest6.executor": "Run",
+    "Application.Test4.executor": "Run",
+    "Application.lastTest.executor": "Run",
+    "Application.test.executor": "Run",
+    "Application.test2.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/andre/IdeaProjects/DiplomaProject",
+    "onboarding.tips.debug.path": "C:/Users/andre/IdeaProjects/DiplomaProject/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ourcalendar.view" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="BaseClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tests.BaseClient" />
@@ -108,8 +139,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tests.MainTest6" />
+    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
       <module name="DiplomaProject" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,10 +156,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MainTest" />
         <item itemvalue="Application.BaseServer" />
         <item itemvalue="Application.BaseClient" />
         <item itemvalue="Application.lastTest" />
-        <item itemvalue="Application.MainTest6" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721250524892</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="переделывание под шаблон MVP">
+      <option name="closed" value="true" />
+      <created>1721334065858</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721334065858</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,6 +231,7 @@
     <MESSAGE value="Основные классы model + класс Tabel как View" />
     <MESSAGE value="Добавление одноранговой сети и разного" />
     <MESSAGE value="обработка полученных сообщений" />
-    <option name="LAST_COMMIT_MESSAGE" value="обработка полученных сообщений" />
+    <MESSAGE value="переделывание под шаблон MVP" />
+    <option name="LAST_COMMIT_MESSAGE" value="переделывание под шаблон MVP" />
   </component>
 </project>

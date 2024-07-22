@@ -4,14 +4,14 @@ import com.ourcalendar.view.ConsoleUI;
 
 import java.io.IOException;
 
-public class CommandClientUser extends CommandAbstract{
-    public CommandClientUser(ConsoleUI consoleUI){
+public class CommandFinish extends CommandAbstract{
+    public CommandFinish(ConsoleUI consoleUI){
         super(consoleUI);
-        description = "отправка изменений";
+        description = "Закончить сессию";
     }
 
     @Override
     public void execute() throws IOException, InterruptedException {
-        consoleUI.sendMyComments();
+        consoleUI.finish();
     }
 }

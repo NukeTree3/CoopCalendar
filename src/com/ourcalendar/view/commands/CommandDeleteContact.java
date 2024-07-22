@@ -4,14 +4,14 @@ import com.ourcalendar.view.ConsoleUI;
 
 import java.io.IOException;
 
-public class CommandAddUsers extends CommandAbstract{
-    public CommandAddUsers(ConsoleUI consoleUI){
+public class CommandDeleteContact extends CommandAbstract{
+    public CommandDeleteContact(ConsoleUI consoleUI){
         super(consoleUI);
-        description = "Добваление нового контакта";
+        description = "Удаление контакта";
     }
 
     @Override
     public void execute() throws IOException, ClassNotFoundException {
-        consoleUI.addUser();
+        consoleUI.deleteContact();
     }
 }

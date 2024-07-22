@@ -12,7 +12,7 @@ public class CommandOutputTable extends CommandAbstract{
     }
 
     @Override
-    public void execute() throws IOException, ClassNotFoundException {
+    public void execute() {
         consoleUI.outputTable();
     }
 }

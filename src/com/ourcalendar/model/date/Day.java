@@ -1,6 +1,8 @@
 package com.ourcalendar.model.date;
 
-public class Day {
+import java.io.Serializable;
+
+public class Day implements Serializable {
 
 
     private int numberOfDay;

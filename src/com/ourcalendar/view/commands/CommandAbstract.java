@@ -16,5 +16,5 @@ public abstract class CommandAbstract {
         return description;
     }
 
-    public abstract void execute() throws IOException, ClassNotFoundException;
+    public abstract void execute() throws IOException, ClassNotFoundException, InterruptedException;
 }

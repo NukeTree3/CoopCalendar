@@ -1,5 +1,6 @@
 package com.ourcalendar.model.service;
 
+import com.ourcalendar.model.user.ContactList;
 import com.ourcalendar.model.user.accepteddata.AcceptedData;
 import com.ourcalendar.model.date.CreateYear;
 import com.ourcalendar.model.date.TimeLine;
@@ -22,18 +23,30 @@ public class Service {
     private UserComments userComments;
     private UserChanges userChanges;
     User user;
+    ContactList contactList;
 
     public Service() throws IOException, ClassNotFoundException {
-        acceptedData = new AcceptedData();
         fIleHandler = new FIleHandler();
         createYear = new CreateYear();
         userComments = new UserComments();
         userChanges = new UserChanges();
-        if(fIleHandler.downloadTimeLine()!=null){
-            download();
+        try {
+            downloadTimeLine();
         }
-        else{
-            createYear.createTimeLine();
+        catch (Exception e){
+            createYear.createTimeLine(timeLine);
+        }
+        try {
+            downloadAcceptedData();
+        }
+        catch (Exception e){
+            acceptedData = new AcceptedData();
+        }
+        try {
+            downloadContactList();
+        }
+        catch (Exception e){
+            contactList = new ContactList();
         }
     }
 
@@ -41,6 +54,10 @@ public class Service {
         return timeLine;
     }
 
+    public void closeServer() throws IOException, InterruptedException {
+        fIleHandler.savedAcceptedData(acceptedData);
+        user.stopServer();
+    }
 
     public Year createYear(int year){
         return createYear.createYear(year);
@@ -49,13 +66,6 @@ public class Service {
     public void outputTable(Year year){
         Table table = new Table();
         table.CreateTable(year, acceptedData);
-    }
-
-    public void addComment(int day, int month, Year year, String comment){
-        CommentsEditor commentsEditor = new CommentsEditor();
-        UserComments userComments = new UserComments();
-        commentsEditor.addComments(day, month, year, comment);
-        userComments.addTextPlusDay(year.getMonth(month-1).getDay(day-1), month, year.GetYear());
     }
 
     public void createUser(int port){
@@ -67,28 +77,43 @@ public class Service {
     }
 
     public void clientUser(String message) throws IOException, InterruptedException {
-        user.client(message);
+        user.client(message, contactList.getContactList());
     }
 
-    public void addUsers(String adress, int port){
-        user.addUser(adress, port);
+    public void addUsers(String name, String adress, int port){
+        contactList.addContact(name,adress,port);
     }
 
     public ArrayList<String> getConnectionList(){
-        return user.getConnectionList();
+        return contactList.getContactList();
     }
 
-    public void saved() throws IOException, ClassNotFoundException {
+    public void savedAcceptedData() throws IOException {
         fIleHandler.savedAcceptedData(acceptedData);
+    }
+
+    public void savedTimeLine() throws IOException {
         fIleHandler.savedTimeLine(timeLine);
     }
 
-    public void download() throws IOException, ClassNotFoundException {
-        acceptedData=fIleHandler.downloadAcceptedData();
+    public void savedContactList() throws IOException {
+        fIleHandler.saveContactList(contactList);
+    }
+
+    public void downloadContactList() throws IOException, ClassNotFoundException {
+        contactList=fIleHandler.downloadContactList();
+    }
+    public void downloadTimeLine() throws IOException, ClassNotFoundException {
         timeLine=fIleHandler.downloadTimeLine();
     }
 
-    public ArrayList<String> getUserChanges(){
-        return userChanges.getUserChanges();
+    public void downloadAcceptedData() throws IOException, ClassNotFoundException {
+        acceptedData=fIleHandler.downloadAcceptedData();
+    }
+
+    public boolean deleteContact(String name) throws IOException {
+        boolean bool = contactList.deleteContact(name);
+        savedContactList();
+        return bool;
     }
 }

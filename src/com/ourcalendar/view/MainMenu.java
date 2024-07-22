@@ -1,7 +1,6 @@
 package com.ourcalendar.view;
 
-import com.ourcalendar.view.commands.CommandAbstract;
-import com.ourcalendar.view.commands.CommandOutputTable;
+import com.ourcalendar.view.commands.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,14 +10,16 @@ public class MainMenu {
     private List<CommandAbstract> commandsList;
 
     public MainMenu(ConsoleUI consoleUI){
-//        commandsList = new ArrayList<>();
-//        commandsList.add(new CommandOutputTable());
-//        commandsList.add();
-//        commandsList.add();
-//        commandsList.add();
-//        commandsList.add();
-//        commandsList.add();
-//        commandsList.add();
+        commandsList = new ArrayList<>();
+        commandsList.add(new CommandOutputTable(consoleUI));
+        commandsList.add(new CommandAddUsers(consoleUI));
+        commandsList.add(new CommandAddComment(consoleUI));
+        commandsList.add(new CommandGetConnectionList(consoleUI));
+        commandsList.add(new CommandClientUser(consoleUI));
+        commandsList.add(new CommandStopServer(consoleUI));
+        commandsList.add(new CommandStartServer(consoleUI));
+        commandsList.add(new CommandDeleteContact(consoleUI));
+        commandsList.add(new CommandFinish(consoleUI));
     }
 
     public String outputMenuInfo(){
@@ -30,7 +31,7 @@ public class MainMenu {
         return stringBuilder.toString();
     }
 
-    public void execute(int i) throws IOException, ClassNotFoundException {
+    public void execute(int i) throws IOException, ClassNotFoundException, InterruptedException {
         CommandAbstract command = commandsList.get(i-1);
         command.execute();
     }

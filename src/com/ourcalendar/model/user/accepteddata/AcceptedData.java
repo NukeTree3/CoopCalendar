@@ -1,8 +1,9 @@
 package com.ourcalendar.model.user.accepteddata;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class AcceptedData {
+public class AcceptedData implements Serializable {
     ArrayList<DayAccepted> theirСomments = new ArrayList<>();
 
     public void setData(String rawTheirComments){

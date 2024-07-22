@@ -1,6 +1,8 @@
 package com.ourcalendar.model.date;
 
-public class Year {
+import java.io.Serializable;
+
+public class Year implements Serializable {
     private int year;
     private Month[] months = new Month[12];
 

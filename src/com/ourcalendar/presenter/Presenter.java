@@ -18,53 +18,34 @@ public class Presenter {
     private UserComments userComments;
     private UserChanges userChanges;
 
-    public Presenter(View view) throws IOException, ClassNotFoundException {
+    public Presenter(View view,int port) throws IOException, ClassNotFoundException {
         this.view = view;
         service = new Service();
         userComments = new UserComments();
         userChanges = new UserChanges();
+        service.createUser(port);
     }
 
-    public void addComment(int day, int month, Year year, String comment){
+    public void addComment(int day, int month, int numberOfYear, String comment) throws IOException, ClassNotFoundException {
 
         CommentsEditor commentsEditor = new CommentsEditor();
 
-        commentsEditor.addComments(day,month,year,comment);
+        commentsEditor.addComments(day,month,service.getTimeLine().getTimeLine().get(numberOfYear-2020),comment);
 
-        userChanges.setUserChanges(userComments.addTextPlusDay(year.getMonth(month-1).getDay(day-1),month,year.GetYear()));
+        userChanges.setUserChanges(userComments.addTextPlusDay(service.getTimeLine().getTimeLine().get(numberOfYear-2020).getMonth(month-1).getDay(day-1),month,numberOfYear));
+
+        savedTimeLine();
     }
-
-
 
     public ArrayList<String> getUserChanges(){
-        return service.getUserChanges();
-        //return userChanges.getUserChanges();
+        return userChanges.getUserChanges();
     }
 
-
-
-
-
-    public TimeLine getTimeline(){
-        return service.getTimeLine();
-    }
-
-    public Year createYear(int year){
-        return service.createYear(year);
-    }
-
-    public Year outputYear(int numberOfYear){
-        return service.getTimeLine().getTimeLine().get(numberOfYear);
-    }
 
     public void outputTable(int numberOfYear){
-        service.outputTable(service.getTimeLine().getTimeLine().get(numberOfYear));
-        //service.outputTable(year);
+        service.outputTable(service.getTimeLine().getTimeLine().get(numberOfYear-2020));
     }
 
-    public void createUser(int port){
-        service.createUser(port);
-    }
 
     public void startUser() throws IOException {
         service.startUser();
@@ -74,19 +55,32 @@ public class Presenter {
         service.clientUser(message);
     }
 
-    public void addUsers(String adress, int port){
-        service.addUsers(adress,port);
+    public void addUsers(String name, String adress, int port) throws IOException, ClassNotFoundException {
+        service.addUsers(name,adress,port);
+        savedContactList();
     }
 
     public ArrayList<String> getConnectionList(){
         return service.getConnectionList();
     }
 
-    public void saved() throws IOException, ClassNotFoundException {
-        service.saved();
+    public void savedAcceptedData() throws IOException, ClassNotFoundException {
+        service.savedAcceptedData();
     }
 
-    public void download() throws IOException, ClassNotFoundException {
-        service.download();
+    public void savedTimeLine() throws IOException, ClassNotFoundException {
+        service.savedTimeLine();
+    }
+
+    public void savedContactList() throws IOException, ClassNotFoundException {
+        service.savedContactList();
+    }
+
+    public void stopServer() throws IOException, InterruptedException {
+        service.closeServer();
+    }
+
+    public boolean deleteContact(String name) throws IOException {
+        return service.deleteContact(name);
     }
 }

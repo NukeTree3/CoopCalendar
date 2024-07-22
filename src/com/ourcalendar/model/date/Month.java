@@ -1,6 +1,8 @@
 package com.ourcalendar.model.date;
 
-public class Month {
+import java.io.Serializable;
+
+public class Month implements Serializable {
     private String nameOfMonth;
     private int numberOfMonth;
     private int lenthOfMonth = 31;
