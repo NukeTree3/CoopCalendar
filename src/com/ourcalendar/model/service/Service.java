@@ -2,7 +2,7 @@ package com.ourcalendar.model.service;
 
 import com.ourcalendar.model.user.ContactList;
 import com.ourcalendar.model.user.accepteddata.AcceptedData;
-import com.ourcalendar.model.date.CreateYear;
+import com.ourcalendar.model.date.CreateTimeLine;
 import com.ourcalendar.model.date.TimeLine;
 import com.ourcalendar.model.date.Year;
 import com.ourcalendar.model.filehandler.FIleHandler;
@@ -17,23 +17,23 @@ import java.util.ArrayList;
 public class Service {
     AcceptedData acceptedData;
     FIleHandler fIleHandler;
-    CreateYear createYear;
+    CreateTimeLine createTimeLine;
     TimeLine timeLine = new TimeLine();
     private UserComments userComments;
     private UserChanges userChanges;
     User user;
     ContactList contactList;
 
-    public Service() throws IOException, ClassNotFoundException {
+    public Service(){
         fIleHandler = new FIleHandler();
-        createYear = new CreateYear();
+        createTimeLine = new CreateTimeLine();
         userComments = new UserComments();
         userChanges = new UserChanges();
         try {
             downloadTimeLine();
         }
         catch (Exception e){
-            createYear.createTimeLine(timeLine);
+            createTimeLine.createTimeLine(timeLine);
         }
         try {
             downloadAcceptedData();
@@ -53,18 +53,18 @@ public class Service {
         return timeLine;
     }
 
-    public void closeServer() throws IOException, InterruptedException {
+    public void closeServer() throws IOException {
         fIleHandler.savedAcceptedData(acceptedData);
         user.stopServer();
     }
 
     public Year createYear(int year){
-        return createYear.createYear(year);
+        return createTimeLine.createYear(year);
     }
 
     public String outputTable(Year year){
         Table table = new Table();
-        return table.CreateTable(year, acceptedData);
+        return table.createTable(year, acceptedData);
     }
 
     public void createUser(int port){

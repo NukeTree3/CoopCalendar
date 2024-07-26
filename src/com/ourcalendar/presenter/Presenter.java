@@ -1,7 +1,5 @@
 package com.ourcalendar.presenter;
 
-import com.ourcalendar.model.date.TimeLine;
-import com.ourcalendar.model.date.Year;
 import com.ourcalendar.model.service.Service;
 import com.ourcalendar.model.user.comments.CommentsEditor;
 import com.ourcalendar.model.user.comments.UserChanges;
@@ -18,7 +16,7 @@ public class Presenter {
     private UserComments userComments;
     private UserChanges userChanges;
 
-    public Presenter(View view,int port) throws IOException, ClassNotFoundException {
+    public Presenter(View view,int port) {
         this.view = view;
         service = new Service();
         userComments = new UserComments();
@@ -55,7 +53,7 @@ public class Presenter {
         service.clientUser(message);
     }
 
-    public void addUsers(String name, String adress, int port) throws IOException, ClassNotFoundException {
+    public void addUsers(String name, String adress, int port) throws IOException {
         service.addUsers(name,adress,port);
         savedContactList();
     }
@@ -64,19 +62,19 @@ public class Presenter {
         return service.getConnectionList();
     }
 
-    public void savedAcceptedData() throws IOException, ClassNotFoundException {
+    public void savedAcceptedData() throws IOException {
         service.savedAcceptedData();
     }
 
-    public void savedTimeLine() throws IOException, ClassNotFoundException {
+    public void savedTimeLine() throws IOException {
         service.savedTimeLine();
     }
 
-    public void savedContactList() throws IOException, ClassNotFoundException {
+    public void savedContactList() throws IOException {
         service.savedContactList();
     }
 
-    public void stopServer() throws IOException, InterruptedException {
+    public void stopServer() throws IOException {
         service.closeServer();
     }
 

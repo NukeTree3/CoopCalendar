@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe5cfa1b-9ce8-49ec-a054-1b8b361d0367" name="Changes" comment="доработка функционала до рабочего состояния + доработка консольной составляющей + проведение тестов">
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/table/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="fe5cfa1b-9ce8-49ec-a054-1b8b361d0367" name="Changes" comment="Завершение разработки для пердворительного оценивания">
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/CreateYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/CreateTimeLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Day.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Month.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Month.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Year.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/service/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/presenter/Presenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/presenter/Presenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/ConsoleUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/ConsoleUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/Table.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAbstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/savesContactList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/savesContactList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/table/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/table/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/comments/CommentsEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/comments/CommentsEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/comments/UserComments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/comments/UserComments.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721682576423</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Завершение разработки для пердворительного оценивания">
+      <option name="closed" value="true" />
+      <created>1722009402012</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1722009402012</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +219,7 @@
     <MESSAGE value="обработка полученных сообщений" />
     <MESSAGE value="переделывание под шаблон MVP" />
     <MESSAGE value="доработка функционала до рабочего состояния + доработка консольной составляющей + проведение тестов" />
-    <option name="LAST_COMMIT_MESSAGE" value="доработка функционала до рабочего состояния + доработка консольной составляющей + проведение тестов" />
+    <MESSAGE value="Завершение разработки для пердворительного оценивания" />
+    <option name="LAST_COMMIT_MESSAGE" value="Завершение разработки для пердворительного оценивания" />
   </component>
 </project>

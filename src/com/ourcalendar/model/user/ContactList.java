@@ -34,11 +34,5 @@ public class ContactList implements Serializable {
             }
         }
         return -1;
-
-//        for (String contact: contactList) {
-//            if(name.equals(contact.split(":")[0])){
-//                return ;
-//            }
-//        }
     }
 }

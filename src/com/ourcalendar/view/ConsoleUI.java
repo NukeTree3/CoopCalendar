@@ -17,7 +17,6 @@ public class ConsoleUI implements View {
         presenter = new Presenter(this,login());
         work = true;
         mainMenu = new MainMenu(this);
-        //presenter.startUser();
     }
 
     @Override
@@ -29,7 +28,7 @@ public class ConsoleUI implements View {
         }
     }
 
-    public void finish() throws IOException, InterruptedException {
+    public void finish() throws IOException {
         stopServer();
         System.out.println("Bye, world");
         work=false;
@@ -72,17 +71,6 @@ public class ConsoleUI implements View {
     }
 
 
-
-    @Override
-    public void printText(String text) {
-
-    }
-
-//    public void outputTable(){
-//        presenter.outputTable(presenter.getTimeline().getTimeLine().get(0));
-//    }
-
-
     public void addComment() throws IOException, ClassNotFoundException {
         System.out.println("Введите номер дня");
         String day = scanner.nextLine();
@@ -95,7 +83,7 @@ public class ConsoleUI implements View {
         presenter.addComment(Integer.parseInt(day), Integer.parseInt(month),Integer.parseInt(year),message);
     }
 
-    public void addUser() throws IOException, ClassNotFoundException {
+    public void addUser() throws IOException {
         System.out.println("Введите имя");
         String name = scanner.nextLine();
         System.out.println("Введите адрес");
@@ -105,47 +93,29 @@ public class ConsoleUI implements View {
         presenter.addUsers(name,address,Integer.parseInt(port));
     }
 
-    public void addTestUser(String name,String address, int port) throws IOException, ClassNotFoundException {
+    public void addTestUser(String name,String address, int port) throws IOException {
         presenter.addUsers(name,address,port);
     }
 
     public void sendMyComments() throws IOException, InterruptedException {
         System.out.println("Отправка...");
-        //user.start();
         StringBuilder stringBuilder= new StringBuilder();
         for(String comments : presenter.getUserChanges()){
             presenter.getUserChanges();
-            //System.out.println(comments);
             stringBuilder.append(comments);
             stringBuilder.append("#@@#");
         }
-        //System.out.println(stringBuilder);
         presenter.clientUser(stringBuilder.toString());
     }
 
-//    public void getTable(){
-//        System.out.println("Вот");
-//        presenter.outputTable(Integer.parseInt(scanner.nextLine()));
-//    }
 
     public void getConnects(){
         System.out.println("Вот");
-        //for (String connecton: user.getConnectionList()) {
         for (String connecton: presenter.getConnectionList()) {
             System.out.println(connecton);
         }
     }
 
-    public void getCheanges(){
-        System.out.println("Вот");
-        System.out.println(presenter.getUserChanges().toString());
-    }
-
-    public void testSendToMe() throws IOException, InterruptedException {
-        System.out.println("Вот");
-
-        presenter.clientUser("12##!!##10##!!##0##!!##))))))))))))");
-    }
 
     private void inputError(){
         System.out.println(INPUT_ERROR);
@@ -161,7 +131,7 @@ public class ConsoleUI implements View {
         return Integer.parseInt(scanner.nextLine());
     }
 
-    public void stopServer() throws IOException, InterruptedException {
+    public void stopServer() throws IOException {
         System.out.println("сервер остановлен");
         presenter.stopServer();
     }

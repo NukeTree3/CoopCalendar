@@ -7,16 +7,16 @@ public class Month implements Serializable {
     private int numberOfMonth;
     private int lenthOfMonth = 31;
 
-    public void SetLenthOfMonth(int len){
+    public void setLenthOfMonth(int len){
         this.lenthOfMonth = len;
     }
-    public int GetlenthOfMonth(){
+    public int getlenthOfMonth(){
         return lenthOfMonth;
     }
 
     private Day[] days = new Day[lenthOfMonth];
 
-    public void SetNameOfMonth(String name){
+    public void setNameOfMonth(String name){
         this.nameOfMonth = name;
     }
     public void setNumberOfMonth(int numberOfMonth){
@@ -25,13 +25,13 @@ public class Month implements Serializable {
     public int getMonth(){
         return numberOfMonth;
     }
-    public String GetNameOfMonth(){
+    public String getNameOfMonth(){
         return nameOfMonth;
     }
-    public void SetDays(Day[] days){
+    public void setDays(Day[] days){
         this.days = days.clone();
     }
-    public Day[] GetDays(){
+    public Day[] getDays(){
         return days;
     }
     public Day getDay(int numberOfDay){

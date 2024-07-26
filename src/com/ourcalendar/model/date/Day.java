@@ -10,22 +10,22 @@ public class Day implements Serializable {
     private String comments;
 
 
-    public void SetNumberOfDay(int day){
+    public void setNumberOfDay(int day){
         this.numberOfDay = day;
     }
-    public int GetNumberOfDay(){
+    public int getNumberOfDay(){
         return numberOfDay;
     }
-    public void SetDayOfWeek(String day){
+    public void setDayOfWeek(String day){
         this.dayOfWeek = day;
     }
-    public String GetDayOfWeek(){
+    public String getDayOfWeek(){
         return dayOfWeek;
     }
-    public void SetComments(String text){
+    public void setComments(String text){
         this.comments = text;
     }
-    public String GetComments(){
+    public String getComments(){
         return comments;
     }
 }

@@ -9,57 +9,42 @@ import com.ourcalendar.model.date.Year;
 import java.time.DayOfWeek;
 
 public class Table {
-    public String CreateTable(Year year1, AcceptedData acceptedData){
+    public String createTable(Year year1, AcceptedData acceptedData){
         StringBuilder stringBuilder = new StringBuilder();
-        for (Month moth :year1.GetMonths()){
-            stringBuilder.append(moth.GetNameOfMonth());
-            //System.out.println(moth.GetNameOfMonth());
+        for (Month moth :year1.getMonths()){
+            stringBuilder.append(moth.getNameOfMonth());
             stringBuilder.append("\n");
             int count = 0;
             stringBuilder.append("MON_TUE_WED_THU_FRI_SAT_SUN");
-            //System.out.println("MON_TUE_WED_THU_FRI_SAT_SUN");
             stringBuilder.append("\n");
 
-            for (Day day : moth.GetDays()){
+            for (Day day : moth.getDays()){
                 count++;
-                DayOfWeek dayOfWeek = DayOfWeek.valueOf(day.GetDayOfWeek());
+                DayOfWeek dayOfWeek = DayOfWeek.valueOf(day.getDayOfWeek());
                 int a = 0;
-                while (dayOfWeek.getValue()-a!=1 && day.GetNumberOfDay()==1){
+                while (dayOfWeek.getValue()-a!=1 && day.getNumberOfDay()==1){
                     stringBuilder.append("---");
-                    //System.out.print("---");
                     a++;
                     count++;
                 }
-                stringBuilder.append(day.GetNumberOfDay());
-                //System.out.print(day.GetNumberOfDay());
+                stringBuilder.append(day.getNumberOfDay());
                 stringBuilder.append("/");
-                //System.out.print("/");
-                if (day.GetComments()!=null){
-                    stringBuilder.append(day.GetComments());
-                    //System.out.print(day.GetComments());
+                if (day.getComments()!=null){
+                    stringBuilder.append(day.getComments());
                 }
                 for (DayAccepted dayAccepted: acceptedData.getData()) {
-                    //System.out.println(year1.GetYear()+"-"+dayAccepted.getYear()+"-"+moth.getMonth()+"-"+dayAccepted.getMonth()+"-"+day.GetNumberOfDay()+"-"+dayAccepted.getDay());
-
-                    if (year1.GetYear() == dayAccepted.getYear() && moth.getMonth() == dayAccepted.getMonth() && day.GetNumberOfDay() == dayAccepted.getDay()){
-                        //System.out.println("---------------------------------------");
+                    if (year1.getYear() == dayAccepted.getYear() && moth.getMonth() == dayAccepted.getMonth() && day.getNumberOfDay() == dayAccepted.getDay()){
                         stringBuilder.append(" от других пользователей ");
                         stringBuilder.append(dayAccepted.getMessage());
-                        //System.out.print(" от других пользователей " + dayAccepted.getMessage());
                     }
                 }
-
-
                 if (count>=7){
                     stringBuilder.append("\n");
-                    //System.out.println();
                     count = 0;
                 }
                 stringBuilder.append("_");
-                //System.out.print("_");
             }
             stringBuilder.append("\n");
-            //System.out.println();
         }
         return stringBuilder.toString();
     }
