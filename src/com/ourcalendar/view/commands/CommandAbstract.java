@@ -5,16 +5,16 @@ import com.ourcalendar.view.ConsoleUI;
 import java.io.IOException;
 
 public abstract class CommandAbstract {
-    String description;
-    ConsoleUI consoleUI;
+String description;
+ConsoleUI consoleUI;
 
-    public CommandAbstract(ConsoleUI consoleUI){
-        this.consoleUI = consoleUI;
-    }
+public CommandAbstract(ConsoleUI consoleUI){
+    this.consoleUI = consoleUI;
+}
 
-    public String getDiscription(){
-        return description;
-    }
+public String getDiscription(){
+    return description;
+}
 
-    public abstract void execute() throws IOException, ClassNotFoundException, InterruptedException;
+public abstract void execute() throws IOException, ClassNotFoundException, InterruptedException;
 }

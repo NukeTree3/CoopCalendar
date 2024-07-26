@@ -4,45 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe5cfa1b-9ce8-49ec-a054-1b8b361d0367" name="Changes" comment="переделывание под шаблон MVP">
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/ContactList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandDeleteContact.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandFinish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandStartServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandStopServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/savesAcceptedData.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/savesContactList.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/savesTimeLine.txt" afterDir="false" />
+    <list default="true" id="fe5cfa1b-9ce8-49ec-a054-1b8b361d0367" name="Changes" comment="доработка функционала до рабочего состояния + доработка консольной составляющей + проведение тестов">
+      <change afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/table/Table.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/CreateYear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/CreateYear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Day.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Month.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Month.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/TimeLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/TimeLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Year.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/date/Year.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/FIleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/FIleHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/Writeble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/filehandler/Writeble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/service/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/accepteddata/AcceptedData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/accepteddata/AcceptedData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/model/user/comments/UserComments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/model/user/comments/UserComments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/presenter/Presenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/presenter/Presenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/ConsoleUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/ConsoleUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/Table.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAbstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAddComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAddComment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAddUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandAddUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandClientUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandClientUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandCreateUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandCreateYear.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandDownload.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandGetConnectionList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandGetConnectionList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandGetUserChanges.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandOutputTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandOutputTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandSaved.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ourcalendar/view/commands/CommandStartUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/savesContactList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/savesContactList.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721334065858</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="доработка функционала до рабочего состояния + доработка консольной составляющей + проведение тестов">
+      <option name="closed" value="true" />
+      <created>1721682576422</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721682576423</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,6 +210,7 @@
     <MESSAGE value="Добавление одноранговой сети и разного" />
     <MESSAGE value="обработка полученных сообщений" />
     <MESSAGE value="переделывание под шаблон MVP" />
-    <option name="LAST_COMMIT_MESSAGE" value="переделывание под шаблон MVP" />
+    <MESSAGE value="доработка функционала до рабочего состояния + доработка консольной составляющей + проведение тестов" />
+    <option name="LAST_COMMIT_MESSAGE" value="доработка функционала до рабочего состояния + доработка консольной составляющей + проведение тестов" />
   </component>
 </project>

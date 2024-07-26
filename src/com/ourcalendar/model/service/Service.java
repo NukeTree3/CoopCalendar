@@ -6,11 +6,10 @@ import com.ourcalendar.model.date.CreateYear;
 import com.ourcalendar.model.date.TimeLine;
 import com.ourcalendar.model.date.Year;
 import com.ourcalendar.model.filehandler.FIleHandler;
-import com.ourcalendar.model.user.comments.CommentsEditor;
 import com.ourcalendar.model.user.User;
 import com.ourcalendar.model.user.comments.UserChanges;
 import com.ourcalendar.model.user.comments.UserComments;
-import com.ourcalendar.view.Table;
+import com.ourcalendar.model.table.Table;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -63,9 +62,9 @@ public class Service {
         return createYear.createYear(year);
     }
 
-    public void outputTable(Year year){
+    public String outputTable(Year year){
         Table table = new Table();
-        table.CreateTable(year, acceptedData);
+        return table.CreateTable(year, acceptedData);
     }
 
     public void createUser(int port){

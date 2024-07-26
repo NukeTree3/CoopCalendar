@@ -153,7 +153,7 @@ public class ConsoleUI implements View {
 
     public void outputTable(){
         System.out.println("Введите номер года");
-        presenter.outputTable(Integer.parseInt(scanner.nextLine()));
+        System.out.println(presenter.outputTable(Integer.parseInt(scanner.nextLine())));
     }
 
     public int login(){

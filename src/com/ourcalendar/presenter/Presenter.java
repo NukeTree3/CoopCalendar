@@ -42,8 +42,8 @@ public class Presenter {
     }
 
 
-    public void outputTable(int numberOfYear){
-        service.outputTable(service.getTimeLine().getTimeLine().get(numberOfYear-2020));
+    public String outputTable(int numberOfYear){
+        return service.outputTable(service.getTimeLine().getTimeLine().get(numberOfYear-2020));
     }
 
 
